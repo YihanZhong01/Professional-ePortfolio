@@ -89,7 +89,8 @@ figcaption{font-size:.82rem;color:var(--muted);margin-top:8px}
 .placeholder{border:1px dashed var(--line);border-radius:6px;padding:14px 18px;color:var(--muted);font-size:.9rem}
 
 .project.first{border-top:0;padding-top:0}
-.lead{max-width:65ch;margin:0 0 8px}
+.lead{max-width:65ch;margin:0 0 32px}
+img[src="apex-slides-cover.jpg"]{max-width:560px}
 .fig-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
 .fig-pair figure{margin:0;min-width:0}
 .fig-pair img{background:#fff;aspect-ratio:1.6;object-fit:contain;height:auto}
@@ -172,7 +173,8 @@ img{max-width:100%}
     <h2>About me</h2>
     <div class="narrative">
       <p>My path into public health began with an unanswered question. For my undergraduate thesis, I studied atrial fibrillation patients with a CHA₂DS₂-VASc score of 1, a group that trials rarely include and guidelines leave unclear. I learned that with real-world data, an answer is only as trustworthy as the methods behind it.</p>
-      <p>At Cornell, I brought health education to people held at Tompkins County Jail, a population left out of most health programs. Designing for this setting taught me to listen to partners, speak plainly, and follow through.</p>
+      <p>At Cornell, I brought health education to people held at Tompkins County Jail, a population left out of most health programs. Every material started with audience analysis: who will read this, what do they already know, and what might stop them from using it? Early drafts were too dense, so I cut text, added check boxes, and made every question readable aloud.</p>
+      <p>As a learner, I grow fastest when I test my assumptions against real users. As a leader, I listen before I design, make room for partners' expertise, and follow through on what I promise.</p>
       <p>Next, I plan to pursue a PhD in pharmacoepidemiology to build evidence for the populations that standard research overlooks.</p>
     </div>
     <div class="contact">
@@ -190,6 +192,7 @@ img{max-width:100%}
       <p class="src">Bachelor's thesis · First Affiliated Hospital of Ningbo University · 2024 – 2025</p>
       <p>Should AF patients with a non-sex CHA₂DS₂-VASc score of 1 take oral anticoagulants? Trials rarely study this group, so guidelines give no clear answer. This retrospective cohort study tested whether anticoagulation improved their prognosis.</p>
       <p><span class="k">My role.</span> Refined inclusion criteria with cardiologists, screened confounders (adherence, cost, time to treatment), cleaned cohort data, and ran Kaplan–Meier survival analysis.</p>
+      <p><span class="k">Impact.</span> Adds real-world evidence for a patient group that guidelines leave without a clear recommendation.</p>
       <ul class="tags"><li>Cohort Study</li><li>Confounding Control</li><li>Survival Analysis</li></ul>
     </article>
   </section>
@@ -199,21 +202,39 @@ img{max-width:100%}
     <h2>Ultimate Re-entry Opportunity</h2>
     <p class="src">Program Intern (APEx) · Apr – Oct 2026 · 120 hours</p>
     <p class="lead">Health education and harm reduction for people held at Tompkins County Jail.</p>
-    <ul class="deliv">
-      <li><span class="k">NARCAN training.</span> Co-developed slides that teach participants to recognize an overdose and use naloxone, adapted for low health literacy.</li>
-      <li><span class="k">Nutrition survey and poster.</span> Designed an easy-read, 10-question survey on diet and exercise in jail, and the poster below.</li>
-    </ul>
-    <div class="apex-media">
+    <article class="project first">
+      <h3>Food and Movement Survey</h3>
+      <p class="src">APEx Deliverable 1</p>
+      <p>An easy-read, 10-question survey on diet, hunger, water intake, and exercise in jail. Check-box answers and read-aloud questions let participants with low literacy take part.</p>
+      <p><span class="k">Impact.</span> Gives URO a first picture of food access and eating habits inside the jail to shape future nutrition sessions.</p>
+      <ul class="tags"><li>Survey Design</li><li>Needs Assessment</li><li>Health Literacy</li></ul>
+    </article>
+
+    <article class="project">
+      <h3>Harm Reduction and Naloxone Training</h3>
+      <p class="src">APEx Deliverable 2 · Co-developed with URO partners</p>
+      <p>A 27-slide training on harm reduction, overdose recognition, and how to use NARCAN, with pre- and post-surveys to measure what participants learn.</p>
+      <p><span class="k">Impact.</span> Prepares participants to respond to an overdose after release, when risk is highest, and gives URO a reusable module with built-in evaluation.</p>
       <figure>
-        <img src="poster.jpg" alt="Poster titled Health Education Beyond Incarceration: Promoting Overdose Prevention and Nutrition Awareness" loading="lazy">
-        <figcaption>Project poster. Training slides and survey are kept internal.</figcaption>
+        <img src="apex-slides-cover.jpg" alt="Title slide of the Harm Reduction training presentation" loading="lazy">
+        <figcaption>Title slide only. The full deck is internal material; please contact me if you would like to see it.</figcaption>
       </figure>
-      <figure>
-        <img src="apex-presenting.jpg" alt="Yihan Zhong standing beside her APEx poster" loading="lazy">
-        <figcaption>Presenting the poster.</figcaption>
-      </figure>
-    </div>
-    <ul class="tags"><li>Harm Reduction</li><li>Survey Design</li><li>Community Partnership</li></ul>
+      <ul class="tags"><li>Harm Reduction</li><li>Health Communication</li><li>Program Evaluation</li></ul>
+    </article>
+
+    <article class="project">
+      <h3>Poster presentation</h3>
+      <div class="apex-media">
+        <figure>
+          <img src="poster.jpg" alt="Poster titled Health Education Beyond Incarceration: Promoting Overdose Prevention and Nutrition Awareness" loading="lazy">
+          <figcaption>Project poster.</figcaption>
+        </figure>
+        <figure>
+          <img src="apex-presenting.jpg" alt="Yihan Zhong standing beside her APEx poster" loading="lazy">
+          <figcaption>Presenting the poster.</figcaption>
+        </figure>
+      </div>
+    </article>
   </section>
 
   <section id="coursework" class="view" hidden>
@@ -224,6 +245,7 @@ img{max-width:100%}
       <h3>Smoking &amp; Education Association Explorer</h3>
       <p class="src">Data Analysis with R (VTPEH 6270) · Spring 2026</p>
       <p>An interactive Shiny dashboard on 2024 BRFSS data. Users switch chart types and education groupings, and statistics update with each filter. Smoking fell from 22.7% to 8.1% as education rose (low vs. high: OR 3.34, 95% CI 3.23–3.45).</p>
+      <p><span class="k">Impact.</span> Lets anyone explore a national survey without writing code, making the education gap in smoking easy to see and share.</p>
       <div class="fig-pair">
         <figure><img src="fig-prevalence.jpg" alt="Bar chart: smoking prevalence 22.7% low, 16.5% medium, 8.1% high education" loading="lazy"></figure>
         <figure><img src="fig-or.jpg" alt="Forest plot: odds ratios for current smoking, medium vs high about 2.2, low vs high about 3.3" loading="lazy"></figure>
@@ -236,6 +258,7 @@ img{max-width:100%}
       <h3>Consent and Boundaries Cards for Autistic Teens</h3>
       <p class="src">Health Communication project · Fall 2026 · In progress</p>
       <p>A bilingual card set for parents in Shanghai to use with autistic teens aged 13–15. Eight everyday scenarios model consent and personal boundaries, then show a safe response to practice. Based on Social Cognitive Theory and UNESCO guidance.</p>
+      <p><span class="k">Impact.</span> Fills a gap in sexuality education for autistic teens in China and gives parents a ready-made way to start these conversations at home.</p>
       <figure>
         <img src="cards-draft.jpg" alt="Two draft scenario cards. Front: a classmate asks for a hug at school; a classmate asks for a swimsuit photo. Back: good and not-good choices, a key message, and useful phrases." loading="lazy">
         <figcaption>Early draft made with ChatGPT to test the format. Final cards will add Chinese text and real-world settings.</figcaption>
