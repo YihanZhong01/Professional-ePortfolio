@@ -94,6 +94,10 @@ figcaption{font-size:.82rem;color:var(--muted);margin-top:8px}
 .deliv li{margin-bottom:8px}
 #community .src{margin-bottom:6px}
 
+.apex-media{display:grid;grid-template-columns:2.06fr 1fr;gap:12px;align-items:start}
+.apex-media figure{margin:16px 0 0;min-width:0}
+.apex-media + .tags{margin-top:16px}
+
 /* resume */
 .cv-block{display:grid;grid-template-columns:140px 1fr;gap:24px;padding-block:20px;border-top:1px solid var(--line)}
 .cv-block:first-of-type{border-top:0;padding-top:0}
@@ -113,6 +117,8 @@ footer .mail{font-family:var(--display);font-size:1.3rem;color:var(--fg);user-se
   nav .brand{display:none}
   nav .wrap{justify-content:center}
   .fig-pair{grid-template-columns:1fr}
+  .apex-media{grid-template-columns:1fr}
+  .apex-media figure + figure{max-width:280px}
   .hero{grid-template-columns:1fr;gap:24px}
   .hero img{width:150px}
   .hero h1{font-size:2.1rem}
@@ -193,10 +199,16 @@ img{max-width:100%}
       <li><span class="k">NARCAN training.</span> Co-developed slides that teach participants to recognize an overdose and use naloxone, adapted for low health literacy.</li>
       <li><span class="k">Nutrition survey and poster.</span> Designed an easy-read, 10-question survey on diet and exercise in jail, and the poster below.</li>
     </ul>
-    <figure>
-      <img src="poster.jpg" alt="Poster titled Health Education Beyond Incarceration: Promoting Overdose Prevention and Nutrition Awareness" loading="lazy">
-      <figcaption>Project poster. Training slides and survey are kept internal.</figcaption>
-    </figure>
+    <div class="apex-media">
+      <figure>
+        <img src="poster.jpg" alt="Poster titled Health Education Beyond Incarceration: Promoting Overdose Prevention and Nutrition Awareness" loading="lazy">
+        <figcaption>Project poster. Training slides and survey are kept internal.</figcaption>
+      </figure>
+      <figure>
+        <img src="apex-presenting.jpg" alt="Yihan Zhong standing beside her APEx poster" loading="lazy">
+        <figcaption>Presenting the poster.</figcaption>
+      </figure>
+    </div>
     <ul class="tags"><li>Harm Reduction</li><li>Survey Design</li><li>Community Partnership</li></ul>
   </section>
 
