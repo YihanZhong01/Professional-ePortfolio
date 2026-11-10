@@ -18,7 +18,7 @@ MPH candidate at Cornell University (2027), trained in preventive medicine. I ai
 |---|---|
 | **About** | Public health leadership narrative |
 | **Research** | Oral anticoagulation in low-risk atrial fibrillation (CHA₂DS₂-VASc = 1) |
-| **Community** | NARCAN training and nutrition survey with Ultimate Re-entry Opportunity |
+| **Community (APEx)** | NARCAN training and nutrition survey with Ultimate Re-entry Opportunity |
 | **Coursework** | [R Shiny dashboard on smoking and education](https://github.com/YihanZhong01/Smoking-Education-Association-Explorer); consent education cards for autistic teens |
 
 ## Contact
