@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Yihan Zhong, MPH candidate at Cornell University. Pharmacoepidemiology research, community practice, and visual health education projects.">
+<title>Yihan Zhong Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: one quiet reading column, sticky top nav, hero with portrait beside the thesis line. */
+:root{
+  --bg:#fbfcfb; --surface:#f1f4f2; --fg:#1c2421; --muted:#5b6a64; --line:#dde4e0;
+  --accent:#2e5e4e; --accent-soft:#e3ece7;
+  --display:"Newsreader", Georgia, "Times New Roman", serif;
+  --body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141917; --surface:#1c2320; --fg:#e7ece9; --muted:#9aa8a2; --line:#2c3632;
+  --accent:#8fc2ad; --accent-soft:#22302a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141917; --surface:#1c2320; --fg:#e7ece9; --muted:#9aa8a2; --line:#2c3632;
+  --accent:#8fc2ad; --accent-soft:#22302a; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--display);font-weight:500;text-wrap:balance;margin:0;line-height:1.2}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+nav .brand{font-family:var(--display);font-size:1.15rem;font-weight:500;color:var(--fg);text-decoration:none}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;font-size:.9rem}
+nav ul a{color:var(--muted);text-decoration:none}
+nav ul a:hover{color:var(--accent)}
+
+section{padding-block:48px 72px}
+#about{padding-top:0}
+.about-body{border-top:1px solid var(--line);padding-top:40px}
+.contact{margin-top:40px}
+.contact .mail{font-family:var(--display);font-size:1.3rem;user-select:all}
+nav ul a[aria-current="page"]{color:var(--fg);text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:8px}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:0 0 10px}
+h2{font-size:2rem;margin-bottom:24px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:center;padding-block:56px 48px}
+.hero img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:6px;display:block}
+.hero > div{min-width:0}
+.hero h1{font-size:2.6rem;margin-bottom:6px}
+.hero .role{color:var(--muted);margin:0 0 18px}
+.hero .thesis{font-family:var(--display);font-size:1.45rem;line-height:1.35;margin:0 0 18px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.tags li{font-size:.78rem;padding:3px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:500}
+
+.narrative p{margin:0 0 16px;max-width:65ch}
+.narrative p:last-child{margin-bottom:0}
+
+/* portfolio */
+.group-label{font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:40px 0 16px}
+.group-label:first-of-type{margin-top:0}
+.apex-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;background:var(--surface);border-radius:6px;padding:18px 20px;margin-bottom:20px;font-size:.9rem}
+.apex-meta dt{color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em}
+.apex-meta dd{margin:2px 0 0;font-variant-numeric:tabular-nums}
+.project{padding-block:24px;border-top:1px solid var(--line)}
+.project h3{font-size:1.35rem;margin-bottom:4px}
+.project .src{color:var(--muted);font-size:.88rem;margin:0 0 12px}
+.project p{margin:0 0 12px;max-width:65ch}
+.project .k{font-weight:600}
+.project .tags{margin-top:14px}
+.note{font-size:.85rem;color:var(--muted);font-style:italic}
+figure{margin:16px 0 0}
+figure img{display:block;width:100%;border-radius:4px;border:1px solid var(--line)}
+figcaption{font-size:.82rem;color:var(--muted);margin-top:8px}
+.competencies{margin:0;padding-left:20px;max-width:65ch}
+.competencies li{margin-bottom:6px}
+.placeholder{border:1px dashed var(--line);border-radius:6px;padding:14px 18px;color:var(--muted);font-size:.9rem}
+
+.project.first{border-top:0;padding-top:0}
+.lead{max-width:65ch;margin:0 0 8px}
+.fig-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.fig-pair figure{margin:0;min-width:0}
+.fig-pair img{background:#fff;aspect-ratio:1.6;object-fit:contain;height:auto}
+.links{display:flex;flex-wrap:wrap;gap:8px 20px;font-weight:500;font-size:.92rem;margin-top:14px}
+
+.deliv{margin:0 0 4px;padding-left:20px;max-width:65ch}
+.deliv li{margin-bottom:8px}
+#community .src{margin-bottom:6px}
+
+/* resume */
+.cv-block{display:grid;grid-template-columns:140px 1fr;gap:24px;padding-block:20px;border-top:1px solid var(--line)}
+.cv-block:first-of-type{border-top:0;padding-top:0}
+.cv-block > h3{font-family:var(--body);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;padding-top:4px}
+.cv-block > div{min-width:0;display:grid;gap:16px}
+.entry .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.entry .t{font-weight:600}
+.entry .d{color:var(--muted);font-size:.88rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+.entry .s{color:var(--muted);font-size:.92rem}
+.entry ul{margin:6px 0 0;padding-left:18px;font-size:.94rem}
+
+footer{padding-block:40px 56px;color:var(--muted);font-size:.9rem}
+footer .mail{font-family:var(--display);font-size:1.3rem;color:var(--fg);user-select:all}
+
+@media (max-width:640px){
+  nav ul{gap:6px 12px;font-size:.84rem;flex-wrap:wrap;justify-content:center}
+  nav .brand{display:none}
+  nav .wrap{justify-content:center}
+  .fig-pair{grid-template-columns:1fr}
+  .hero{grid-template-columns:1fr;gap:24px}
+  .hero img{width:150px}
+  .hero h1{font-size:2.1rem}
+  .apex-meta{grid-template-columns:1fr 1fr}
+  .cv-block{grid-template-columns:1fr;gap:10px}
+}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#about">Yihan Zhong</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#community">Community</a></li>
+      <li><a href="#coursework">Coursework</a></li>
+      <li><a href="Yihan_Zhong_CV.pdf" target="_blank" rel="noopener">Resume ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap" id="top">
+
+
+  <section id="about" class="view">
+    <header class="hero">
+    <img src="headshot.jpg" alt="Portrait of Yihan Zhong">
+    <div>
+      <h1>Yihan Zhong</h1>
+      <p class="role">MPH Candidate, Cornell University · 2027</p>
+      <p class="thesis">Generating real-world evidence for the patients that trials leave out.</p>
+      <ul class="tags">
+        <li>Pharmacoepidemiology</li>
+        <li>Drug Effectiveness</li>
+        <li>Chronic Disease Modeling</li>
+      </ul>
+    </div>
+    </header>
+
+    <div class="about-body">
+    <p class="eyebrow">Public Health Leadership Narrative</p>
+    <h2>About me</h2>
+    <div class="narrative">
+      <p>My path into public health began with an unanswered question. For my undergraduate thesis, I studied atrial fibrillation patients with a CHA₂DS₂-VASc score of 1, a group that trials rarely include and guidelines leave unclear. I learned that with real-world data, an answer is only as trustworthy as the methods behind it.</p>
+      <p>At Cornell, I brought health education to people held at Tompkins County Jail, a population left out of most health programs. Designing for this setting taught me to listen to partners, speak plainly, and follow through.</p>
+      <p>Next, I plan to pursue a PhD in pharmacoepidemiology to build evidence for the populations that standard research overlooks.</p>
+    </div>
+    <div class="contact">
+      <p class="eyebrow">Contact</p>
+      <div class="mail">yz3544@cornell.edu</div>
+      <p class="links"><a href="Yihan_Zhong_CV.pdf" target="_blank" rel="noopener">Resume (PDF) ↗</a></p>
+    </div>
+    </div>
+  </section>
+
+  <section id="research" class="view" hidden>
+    <p class="eyebrow">01 · Pharmacoepidemiology research</p>
+    <h2>Anticoagulation in low-risk atrial fibrillation</h2>
+    <article class="project first">
+      <p class="src">Bachelor's thesis · First Affiliated Hospital of Ningbo University · 2024 – 2025</p>
+      <p>Should AF patients with a non-sex CHA₂DS₂-VASc score of 1 take oral anticoagulants? Trials rarely study this group, so guidelines give no clear answer. This retrospective cohort study tested whether anticoagulation improved their prognosis.</p>
+      <p><span class="k">My role.</span> Refined inclusion criteria with cardiologists, screened confounders (adherence, cost, time to treatment), cleaned cohort data, and ran Kaplan–Meier survival analysis.</p>
+      <ul class="tags"><li>Cohort Study</li><li>Confounding Control</li><li>Survival Analysis</li></ul>
+    </article>
+  </section>
+
+  <section id="community" class="view" hidden>
+    <p class="eyebrow">02 · Community practice</p>
+    <h2>Ultimate Re-entry Opportunity</h2>
+    <p class="src">Program Intern (APEx) · Apr – Oct 2026 · 120 hours</p>
+    <p class="lead">Health education and harm reduction for people held at Tompkins County Jail.</p>
+    <ul class="deliv">
+      <li><span class="k">NARCAN training.</span> Co-developed slides that teach participants to recognize an overdose and use naloxone, adapted for low health literacy.</li>
+      <li><span class="k">Nutrition survey and poster.</span> Designed an easy-read, 10-question survey on diet and exercise in jail, and the poster below.</li>
+    </ul>
+    <figure>
+      <img src="poster.jpg" alt="Poster titled Health Education Beyond Incarceration: Promoting Overdose Prevention and Nutrition Awareness" loading="lazy">
+      <figcaption>Project poster. Training slides and survey are kept internal.</figcaption>
+    </figure>
+    <ul class="tags"><li>Harm Reduction</li><li>Survey Design</li><li>Community Partnership</li></ul>
+  </section>
+
+  <section id="coursework" class="view" hidden>
+    <p class="eyebrow">03 · Course projects</p>
+    <h2>Visual tools for data and health education</h2>
+
+    <article class="project first">
+      <h3>Smoking &amp; Education Association Explorer</h3>
+      <p class="src">Data Analysis with R (VTPEH 6270) · Spring 2026</p>
+      <p>An interactive Shiny dashboard on 2024 BRFSS data. Users switch chart types and education groupings, and statistics update with each filter. Smoking fell from 22.7% to 8.1% as education rose (low vs. high: OR 3.34, 95% CI 3.23–3.45).</p>
+      <div class="fig-pair">
+        <figure><img src="fig-prevalence.jpg" alt="Bar chart: smoking prevalence 22.7% low, 16.5% medium, 8.1% high education" loading="lazy"></figure>
+        <figure><img src="fig-or.jpg" alt="Forest plot: odds ratios for current smoking, medium vs high about 2.2, low vs high about 3.3" loading="lazy"></figure>
+      </div>
+      <p class="links"><a href="https://muxiao1019.shinyapps.io/shinyapp/" target="_blank" rel="noopener">Live dashboard ↗</a><a href="https://github.com/muxiao1019-bot/Smoking-Education-Association-Explorer" target="_blank" rel="noopener">GitHub ↗</a></p>
+      <ul class="tags"><li>R Shiny</li><li>Data Visualization</li><li>Logistic Regression</li></ul>
+    </article>
+
+    <article class="project">
+      <h3>Consent and Boundaries Cards for Autistic Teens</h3>
+      <p class="src">Health Communication project · Fall 2026 · In progress</p>
+      <p>A bilingual card set for parents in Shanghai to use with autistic teens aged 13–15. Eight everyday scenarios model consent and personal boundaries, then show a safe response to practice. Based on Social Cognitive Theory and UNESCO guidance.</p>
+      <figure>
+        <img src="cards-draft.jpg" alt="Two draft scenario cards. Front: a classmate asks for a hug at school; a classmate asks for a swimsuit photo. Back: good and not-good choices, a key message, and useful phrases." loading="lazy">
+        <figcaption>Early draft made with ChatGPT to test the format. Final cards will add Chinese text and real-world settings.</figcaption>
+      </figure>
+      <ul class="tags"><li>Audience Analysis</li><li>Behavioral Theory</li><li>Visual Design</li></ul>
+    </article>
+  </section>
+
+</main>
+
+<script>
+(function(){
+  var views=["about","research","community","coursework"];
+  function show(){
+    var id=(location.hash||"").slice(1);
+    if(views.indexOf(id)<0) id="about";
+    views.forEach(function(v){document.getElementById(v).hidden=(v!==id);});
+    document.querySelectorAll("nav ul a[href^='#']").forEach(function(a){
+      if(a.getAttribute("href")==="#"+id) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current");
+    });
+    window.scrollTo(0,0);
+  }
+  window.addEventListener("hashchange",show);
+  show();
+})();
+</script>
+
+</body>
+</html>
